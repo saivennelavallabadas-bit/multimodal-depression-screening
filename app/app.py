@@ -21,6 +21,7 @@ ARTIFACTS = PROJECT_ROOT / "artifacts" / "lmvd_baseline"
 MODELS_DIR = ARTIFACTS / "models"
 METRICS_PATH = ARTIFACTS / "metrics.json"
 PROCESSED_PATH = PROJECT_ROOT / "data" / "processed_lmvd.npz"
+MANIFEST_PATH = PROJECT_ROOT / "data" / "lmvd_manifest.csv"
 
 st.set_page_config(
     page_title="Multimodal Depression Research",
@@ -154,7 +155,15 @@ if page == "Dashboard":
     st.subheader("Project status")
     c1, c2, c3 = st.columns(3)
     c1.metric("Saved baseline models", len(models))
-    c2.metric("Processed samples", "1,823" if PROCESSED_PATH.exists() else "Not found")
+    if MANIFEST_PATH.exists():
+        try:
+            sample_count = len(pd.read_csv(MANIFEST_PATH))
+            sample_display = f"{sample_count:,}"
+        except (OSError, ValueError, pd.errors.ParserError):
+            sample_display = "Unavailable"
+    else:
+        sample_display = "Not found"
+    c2.metric("Dataset samples", sample_display)
     c3.metric("Saved evaluation", "Available" if metrics_data else "Not found")
 
     
