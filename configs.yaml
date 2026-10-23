@@ -1,0 +1,21 @@
+# Documentation-only starting configuration. Current CLI flags are in README.
+seed: 42
+label_definition: "UPDATE after checking the authorized dataset documentation"
+dataset_release: "PENDING DAIC-WOZ ACCESS; do not claim DAIC-WOZ results yet"
+split:
+  train: 0.70
+  validation: 0.15
+  test: 0.15
+modalities:
+  - audio
+  - video
+  - text
+fusion: late_fusion_on_out_of_fold_probabilities
+deep_model:
+  architecture: modality-specific MLPs with a concatenation fusion head
+  audio_input: MFCC and spectral summary features
+  video_input: sampled face-region HOG summary features
+  text_input: TF-IDF unigrams and bigrams
+  early_stopping_patience: 8
+  threshold: 0.5
+explainability: test-set modality zeroing sensitivity (coarse, non-causal)

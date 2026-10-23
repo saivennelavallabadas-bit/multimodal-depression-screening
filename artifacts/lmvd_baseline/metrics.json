@@ -1,0 +1,122 @@
+{
+  "dataset": "LMVD pre-extracted audio and visual features",
+  "warning": "Research baseline only, not a diagnostic tool. Sample-level splitting was used; participant-independent evaluation has not been established.",
+  "split_counts": {
+    "train": 1276,
+    "validation": 273,
+    "test": 274
+  },
+  "models": {
+    "audio": {
+      "validation": {
+        "accuracy": 0.4835164835164835,
+        "precision": 0.4806201550387597,
+        "recall": 0.45588235294117646,
+        "f1": 0.4679245283018868,
+        "roc_auc": 0.501905324173465,
+        "confusion_matrix": [
+          [
+            70,
+            67
+          ],
+          [
+            74,
+            62
+          ]
+        ]
+      },
+      "test": {
+        "accuracy": 0.49635036496350365,
+        "precision": 0.4928571428571429,
+        "recall": 0.5073529411764706,
+        "f1": 0.5,
+        "roc_auc": 0.4869458653026428,
+        "confusion_matrix": [
+          [
+            67,
+            71
+          ],
+          [
+            67,
+            69
+          ]
+        ]
+      },
+      "training_oof_accuracy": 0.45846394984326017
+    },
+    "visual": {
+      "validation": {
+        "accuracy": 0.6996336996336996,
+        "precision": 0.684931506849315,
+        "recall": 0.7352941176470589,
+        "f1": 0.7092198581560284,
+        "roc_auc": 0.7908705452984113,
+        "confusion_matrix": [
+          [
+            91,
+            46
+          ],
+          [
+            36,
+            100
+          ]
+        ]
+      },
+      "test": {
+        "accuracy": 0.7408759124087592,
+        "precision": 0.7272727272727273,
+        "recall": 0.7647058823529411,
+        "f1": 0.7455197132616488,
+        "roc_auc": 0.8144714407502132,
+        "confusion_matrix": [
+          [
+            99,
+            39
+          ],
+          [
+            32,
+            104
+          ]
+        ]
+      },
+      "training_oof_accuracy": 0.7115987460815048
+    },
+    "fusion": {
+      "validation": {
+        "accuracy": 0.717948717948718,
+        "precision": 0.7322834645669292,
+        "recall": 0.6838235294117647,
+        "f1": 0.7072243346007605,
+        "roc_auc": 0.7851277372262774,
+        "confusion_matrix": [
+          [
+            103,
+            34
+          ],
+          [
+            43,
+            93
+          ]
+        ]
+      },
+      "test": {
+        "accuracy": 0.7408759124087592,
+        "precision": 0.7443609022556391,
+        "recall": 0.7279411764705882,
+        "f1": 0.7360594795539034,
+        "roc_auc": 0.786231884057971,
+        "confusion_matrix": [
+          [
+            104,
+            34
+          ],
+          [
+            37,
+            99
+          ]
+        ]
+      },
+      "training_oof_accuracy": 0.6818181818181818
+    }
+  }
+}

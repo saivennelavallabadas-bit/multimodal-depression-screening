@@ -1,0 +1,52 @@
+.venv/
+__pycache__/
+*.py[cod]
+
+# Keep local datasets and generated data out of GitHub
+data/raw/
+data/demo/
+data/manifest.csv
+data/demo_manifest.csv
+data/splits/
+Audio_feature/
+Video_feature/
+label/
+english_depression.csv
+*.npz
+
+# Exclude other artifacts, but include the models required by the app
+artifacts/*
+!artifacts/lmvd_baseline/
+!artifacts/english_text/
+
+artifacts/lmvd_baseline/*
+!artifacts/lmvd_baseline/metrics.json
+!artifacts/lmvd_baseline/models/
+
+artifacts/lmvd_baseline/models/*
+!artifacts/lmvd_baseline/models/audio_model.joblib
+!artifacts/lmvd_baseline/models/fusion_model.joblib
+!artifacts/lmvd_baseline/models/visual_model.joblib
+
+artifacts/english_text/*
+!artifacts/english_text/english_text_model.joblib
+!artifacts/english_text/metrics.json
+
+# Python and operating-system files
+.DS_Store
+
+# Keep dataset manifests and external dataset repository local
+data/lmvd_manifest.csv
+data/mmpsy-data-main/
+
+# Keep duplicate-audit reports local
+improved_duplicate_candidates.csv
+near_duplicate_candidates.csv
+near_duplicate_review.csv
+near_duplicate_split_review.csv
+near_duplicates_across_splits.csv
+remaining_cross_split_candidates.csv
+verified_duplicate_review.csv
+
+# Keep backup application local
+app/app_backup_before_evaluation.py
